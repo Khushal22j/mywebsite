@@ -964,7 +964,7 @@ header {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: url("Khushall.jpg") no-repeat center center/cover;
+    background: url('Khushall.jpg') no-repeat center center/cover;
     height: 100vh;
     color: #fff;
     opacity: 0.8;

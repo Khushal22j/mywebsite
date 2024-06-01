@@ -1036,3 +1036,26 @@ header {
     }
 }
 
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Initial hidden state */
+.about-content {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+/* Class to trigger the slide-in animation */
+.slide-in {
+    animation: slideIn 0.5s forwards;
+}

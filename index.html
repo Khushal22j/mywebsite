@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -39,10 +39,10 @@
             </div>
         </section>
 
-       <section id="about" class="fade-in">
+        <section id="about" class="fade-in">
             <div class="about-content">
                 <h2>About Me</h2>
-                <p>Hello, I'm Khushal Jhingan, a dedicated BTech student at Kalinga Institute of Industrial Technology, and a passionate developer with expertise in creating elegant and user-friendly web applications. With a strong foundation in various programming languages and technologies, including Java, Python, HTML, Kotlin, and JavaScript, I strive to deliver high-quality solutions that meet client objectives and exceed expectations.</p>
+                <p>Hello, I'm Khushal Jhingan, a dedicated BTech student at Kalinga Institute of Industrial Technology, and a passionate developer with expertise in creating elegant and user-friendly web applications. With a strong foundation in various programming languages and technologies, including [insert relevant technologies here], I strive to deliver high-quality solutions that meet client objectives and exceed expectations.</p>
                 <p>Driven by a relentless pursuit of excellence, I continuously expand my skills and stay updated with the latest trends in technology, ensuring that my projects leverage cutting-edge techniques and tools for optimal performance and efficiency. I thrive in collaborative environments, where I can contribute my technical expertise and learn from seasoned professionals, fostering an atmosphere of growth and innovation.</p>
                 <p>Beyond my technical prowess, I pride myself on my ability to translate complex requirements into intuitive and visually appealing user experiences. My design-centric approach ensures that every project not only functions seamlessly but also delights users with its aesthetic appeal and user-friendly interface.</p>
                 <p>I am excited to explore opportunities for collaboration, where I can leverage my skills and passion to create impactful solutions that drive business success. Let's connect and explore opportunities for collaboration!</p>
@@ -52,5 +52,29 @@
 
     <footer>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const aboutSection = document.querySelector('.about-content');
+    
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+    
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('slide-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+    
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+            observer.observe(aboutSection);
+        });
+    </script>
+    
 </body>
 </html>
